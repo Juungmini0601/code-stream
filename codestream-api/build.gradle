@@ -2,7 +2,9 @@ bootJar.enabled = true
 jar.enabled = false
 
 dependencies {
+    implementation project(":codestream-model")
     implementation project(":storage:db-core")
+
     // Web, Validation
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
