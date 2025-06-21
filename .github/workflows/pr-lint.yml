@@ -13,15 +13,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           java-version: '21'
           distribution: 'temurin'
+
       - name: Lint
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: checkFormat
+          arguments: spotlessJavaCheck
+
       - name: Test
         uses: gradle/gradle-build-action@v2
         with:

@@ -21,7 +21,8 @@ jobs:
       - name: Lint
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: checkFormat
+          arguments: spotlessJavaCheck
+
       - name: Test
         uses: gradle/gradle-build-action@v2
         with:
