@@ -21,7 +21,7 @@ jobs:
       - name: Lint
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: spotlessJavaCheck
+          arguments: spotlessCheck
 
       - name: Test
         uses: gradle/gradle-build-action@v2
@@ -41,22 +41,10 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./core/core-api/Dockerfile
+          file: ./codestream-api/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/java-kata-api:latest
-            ${{ secrets.DOCKER_USERNAME }}/java-kata-api:${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-
-      - name: Build and push Docker image for core-worker
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: ./core/core-worker/Dockerfile
-          push: true
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/java-kata-api:latest
-            ${{ secrets.DOCKER_USERNAME }}/java-kata-api:${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/codestream-api:latest
+            ${{ secrets.DOCKER_USERNAME }}/codestream-api:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max

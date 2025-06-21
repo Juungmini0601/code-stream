@@ -23,7 +23,7 @@ jobs:
       - name: Lint
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: spotlessJavaCheck
+          arguments: spotlessCheck
 
       - name: Test
         uses: gradle/gradle-build-action@v2
