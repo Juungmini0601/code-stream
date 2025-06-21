@@ -1,0 +1,4 @@
+[env]
+"storage-local-db-url" = "localhost:13306/code-stream"
+"storage-local-db-username" = "jungmini"
+"storage-local-db-password" = "qwer1234"

@@ -1,0 +1,6 @@
+dependencies {
+    implementation project(":codestream-model")
+    api 'org.springframework.boot:spring-boot-starter-data-jdbc'
+
+    runtimeOnly 'com.mysql:mysql-connector-j'
+}

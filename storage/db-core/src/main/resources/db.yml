@@ -1,0 +1,30 @@
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+---
+spring.config.activate.on-profile: local
+
+spring:
+  h2:
+    console:
+      enabled: true
+
+  storage:
+    datasource:
+      core:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://${storage-local-db-url}
+        username: ${storage-local-db-username}
+        password: ${storage-local-db-password}
+
+---
+spring.config.activate.on-profile: prod
+
+storage:
+  datasource:
+    core:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://${storage-prod-db-url}
+      username: ${storage-prod-db-username}
+      password: ${storage-prod-db-password}
