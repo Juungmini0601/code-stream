@@ -11,22 +11,20 @@ COPY gradle.properties .
 COPY lint.gradle .
 
 # 소스코드 복사
-COPY core/core-api core/core-api
-COPY core/core-model core/core-model
+COPY codestream-api codestream-api/
+COPY codestream-model codestream-model/
 COPY storage storage/
-COPY support support/
-COPY messaging messaging/
 
 # 어플리케이션 빌드
 RUN chmod +x ./gradlew
-RUN ./gradlew :core:core-api:bootJar --no-daemon
+RUN ./gradlew :codestream-api:bootJar --no-daemon
 
 # 런타임
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
 # Copy from build
-COPY --from=build /app/core/core-api/build/libs/*.jar app.jar
+COPY --from=build /app/codestream-api/build/libs/*.jar app.jar
 
 # Prod Profile
 ENV SPRING_PROFILES_ACTIVE=prod
