@@ -20,8 +20,7 @@ public class ArticleTag extends BaseEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ArticleTag that = (ArticleTag) o;
-        return Objects.equals(articleId, that.articleId) && 
-               Objects.equals(tagId, that.tagId);
+        return Objects.equals(articleId, that.articleId) && Objects.equals(tagId, that.tagId);
     }
 
     @Override

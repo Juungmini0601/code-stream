@@ -20,8 +20,7 @@ public class Bookmark extends BaseEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bookmark bookmark = (Bookmark) o;
-        return Objects.equals(userId, bookmark.userId) && 
-               Objects.equals(articleId, bookmark.articleId);
+        return Objects.equals(userId, bookmark.userId) && Objects.equals(articleId, bookmark.articleId);
     }
 
     @Override
