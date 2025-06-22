@@ -30,6 +30,7 @@ public class OauthEntity extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long oauthId;
 
+    @Column(nullable = false)
     private String providerId;
 
     @Enumerated(value = EnumType.STRING)
