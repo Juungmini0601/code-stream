@@ -13,7 +13,8 @@ COPY lint.gradle .
 # 소스코드 복사
 COPY codestream-api codestream-api/
 COPY codestream-model codestream-model/
-COPY storage storage/
+COPY codestream-storage codestream-storage/
+COPY codestream-mail codestream-mail/
 
 # 어플리케이션 빌드
 RUN chmod +x ./gradlew
