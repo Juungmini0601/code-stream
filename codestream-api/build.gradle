@@ -4,16 +4,20 @@ jar.enabled = false
 dependencies {
     implementation project(":codestream-model")
     implementation project(":storage:db-core")
+    implementation project(":storage:redis-core")
 
     // Web, Validation
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
-    // Jwt
-    implementation "io.jsonwebtoken:jjwt-api:${jjwtVersion}"
-    implementation "io.jsonwebtoken:jjwt-impl:${jjwtVersion}"
-    runtimeOnly "io.jsonwebtoken:jjwt-gson:${jjwtVersion}"
+    // Testcontainers 의존성
+    testImplementation "org.testcontainers:testcontainers:${testContainerVersion}"
+    testImplementation "org.testcontainers:junit-jupiter:${testContainerVersion}"
+    testImplementation "org.testcontainers:mysql:${testContainerMysqlVersion}"
+    testImplementation "com.redis:testcontainers-redis:${testContainerRedisVersion}"
 
-    // Bcrypt
-    implementation "org.mindrot:jbcrypt:${jbcryptVersion}"
+    // Spring Boot Test 의존성
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+
 }
