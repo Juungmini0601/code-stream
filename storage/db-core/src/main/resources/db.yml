@@ -1,22 +1,39 @@
-mybatis:
-  configuration:
-    map-underscore-to-camel-case: true
+spring:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate.default_batch_fetch_size: 100
 
 ---
 spring.config.activate.on-profile: local
 
 spring:
-  h2:
-    console:
-      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+  sql:
+    init:
+      mode: always
 
-  storage:
-    datasource:
-      core:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://${storage-local-db-url}
-        username: ${storage-local-db-username}
-        password: ${storage-local-db-password}
+storage:
+  datasource:
+    core:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://${storage-local-db-url}
+      username: ${storage-local-db-username}
+      password: ${storage-local-db-password}
+      maximum-pool-size: 25
+      connection-timeout: 1100
+      keepalive-time: 30000
+      validation-timeout: 1000
+      max-lifetime: 600000
+      pool-name: core-db-pool
 
 ---
 spring.config.activate.on-profile: prod
@@ -28,3 +45,9 @@ storage:
       jdbc-url: jdbc:mysql://${storage-prod-db-url}
       username: ${storage-prod-db-username}
       password: ${storage-prod-db-password}
+      maximum-pool-size: 25
+      connection-timeout: 1100
+      keepalive-time: 30000
+      validation-timeout: 1000
+      max-lifetime: 600000
+      pool-name: core-db-pool
