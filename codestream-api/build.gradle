@@ -3,8 +3,9 @@ jar.enabled = false
 
 dependencies {
     implementation project(":codestream-model")
-    implementation project(":storage:db-core")
-    implementation project(":storage:redis-core")
+    implementation project(":codestream-storage:db-core")
+    implementation project(":codestream-storage:redis-core")
+    implementation project(":codestream-mail")
 
     // Web, Validation
     implementation 'org.springframework.boot:spring-boot-starter-web'

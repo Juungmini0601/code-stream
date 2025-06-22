@@ -1,0 +1,9 @@
+mail:
+  aws:
+    ses:
+      access-key: ${AWS_ACCESS_KEY}
+      secret-key: ${AWS_SECRET_KEY}
+    region: ap-northeast-2
+
+---
+spring.config.activation.on-profile: local
