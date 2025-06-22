@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+import codestream.jungmini.me.domain.User;
 import codestream.jungmini.me.domain.UserRole;
 
 @ToString
@@ -48,4 +49,18 @@ public class UserEntity extends BaseEntity {
 
     @Enumerated(value = STRING)
     private UserRole role;
+
+    public User toDomain() {
+        return User.builder()
+                .userId(userId)
+                .email(email)
+                .password(password)
+                .nickname(nickname)
+                .introduction(introduction)
+                .profileImageUrl(profileImageUrl)
+                .role(role)
+                .createdAt(getCreatedAt())
+                .updatedAt(getUpdatedAt())
+                .build();
+    }
 }

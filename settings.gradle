@@ -11,5 +11,6 @@ rootProject.name = 'codestream'
 
 include 'codestream-api'
 include 'codestream-model'
-include 'storage:db-core'
-include 'storage:redis-core'
+include 'codestream-storage:db-core'
+include 'codestream-storage:redis-core'
+include 'codestream-mail'
