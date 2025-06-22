@@ -11,9 +11,9 @@ import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClientBuilder;
 
 @Configuration
 public class SESConfig {
-    private String accessKey;
-    private String secretKey;
-    private String region;
+    private final String accessKey;
+    private final String secretKey;
+    private final String region;
 
     public SESConfig(
             @Value("${mail.aws.ses.access-key}") String accessKey,
