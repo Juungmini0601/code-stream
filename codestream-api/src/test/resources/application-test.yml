@@ -23,3 +23,9 @@ storage:
     core:
       driver-class-name: com.mysql.cj.jdbc.Driver
 
+mail:
+  aws:
+    ses:
+      access-key: ${AWS_ACCESS_KEY:test-access-key}
+      secret-key: ${AWS_SECRET_KEY:test-secret-key}
+    region: ap-northeast-2
