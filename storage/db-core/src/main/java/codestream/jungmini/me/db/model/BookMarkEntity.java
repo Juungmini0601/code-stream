@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,10 +20,11 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "bookmarks")
-public class BookMarkEntity extends BaseEntity{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long bookmarkId;
-	private Long userId;
-	private Long articleId;
+public class BookMarkEntity extends BaseEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long bookmarkId;
+
+    private Long userId;
+    private Long articleId;
 }

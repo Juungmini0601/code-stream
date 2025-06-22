@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,19 +22,19 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @Table(name = "articles")
 public class ArticleEntity extends BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long articleId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long articleId;
 
-	@Column(nullable = false)
-	private Long categoryId;
+    @Column(nullable = false)
+    private Long categoryId;
 
-	@Column(nullable = false)
-	private String title;
+    @Column(nullable = false)
+    private String title;
 
-	@Column(nullable = false)
-	private String summary;
+    @Column(nullable = false)
+    private String summary;
 
-	@Column(nullable = false)
-	private String thumbnailUrl;
+    @Column(nullable = false)
+    private String thumbnailUrl;
 }

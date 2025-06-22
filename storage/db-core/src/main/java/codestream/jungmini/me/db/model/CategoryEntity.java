@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,10 +22,10 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @Table(name = "categories")
 public class CategoryEntity extends BaseEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long categoryId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long categoryId;
 
-	@Column(nullable = false, unique = true)
-	private String name;
+    @Column(nullable = false, unique = true)
+    private String name;
 }

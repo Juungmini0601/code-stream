@@ -9,5 +9,4 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaAuditing
 @EntityScan("codestream.jungmini.me.db.model")
 @EnableJpaRepositories("codestream.jungmini.me.db")
-public class JPAConfig {
-}
+public class JPAConfig {}
