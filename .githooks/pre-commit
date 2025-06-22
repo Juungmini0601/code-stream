@@ -3,4 +3,4 @@
 echo "run git hooks for formatting and linting"
 
 ./gradlew spotlessJavaApply
-./gradlew spotlessJavaCheck
+git add -u

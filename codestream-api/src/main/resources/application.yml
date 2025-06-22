@@ -5,6 +5,7 @@ spring:
   config:
     import:
       - db.yml
+      - redis.yml
 
   web.resources.add-mappings: false
 

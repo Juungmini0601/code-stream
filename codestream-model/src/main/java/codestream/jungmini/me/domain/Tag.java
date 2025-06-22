@@ -1,4 +1,4 @@
-package codestream.jungmini.me.model;
+package codestream.jungmini.me.domain;
 
 import java.util.Objects;
 
@@ -11,20 +11,20 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ArticleTag extends BaseEntity {
-    private Long articleId;
+public class Tag extends BaseEntity {
     private Long tagId;
+    private String tagName;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ArticleTag that = (ArticleTag) o;
-        return Objects.equals(articleId, that.articleId) && Objects.equals(tagId, that.tagId);
+        Tag tag = (Tag) o;
+        return Objects.equals(tagId, tag.tagId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(articleId, tagId);
+        return Objects.hash(tagId);
     }
 }

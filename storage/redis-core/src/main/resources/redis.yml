@@ -1,0 +1,20 @@
+redis-stream:
+  stream-key: submission
+
+spring.config.activate.on-profile: local
+
+spring:
+  data:
+    redis:
+      host: ${storage-redis-local-host}
+      port: ${storage-redis-local-port}
+      timeout: 3000
+---
+spring.config.activate.on-profile: prod
+
+spring:
+  data:
+    redis:
+      host: ${storage-redis-prod-host}
+      port: ${storage-redis-local-port}
+      timeout: 3000

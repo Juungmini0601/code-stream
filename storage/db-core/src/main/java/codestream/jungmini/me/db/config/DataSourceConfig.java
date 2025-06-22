@@ -11,7 +11,7 @@ import com.zaxxer.hikari.HikariDataSource;
 @Configuration
 public class DataSourceConfig {
     @Bean
-    @ConfigurationProperties(prefix = "spring.storage.datasource.core")
+    @ConfigurationProperties(prefix = "storage.datasource.core")
     public HikariConfig coreHikariConfig() {
         return new HikariConfig();
     }
