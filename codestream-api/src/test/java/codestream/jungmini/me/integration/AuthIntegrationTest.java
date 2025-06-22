@@ -71,7 +71,7 @@ public class AuthIntegrationTest extends IntegrationTest {
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(objectMapper.writeValueAsString(request)));
             // then
-            response.andExpect(status().isConflict()).andDo(print());
+            response.andExpect(status().isConflict());
             verify(mailService, never()).send(anyString(), anyString(), anyString());
         }
     }
