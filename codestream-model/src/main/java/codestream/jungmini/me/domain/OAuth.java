@@ -1,4 +1,4 @@
-package codestream.jungmini.me.model;
+package codestream.jungmini.me.domain;
 
 import java.util.Objects;
 
@@ -11,20 +11,22 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Tag extends BaseEntity {
-    private Long tagId;
-    private String tagName;
+public class OAuth extends BaseEntity {
+    private Long oauthId;
+    private String providerId;
+    private OAuthProvider provider;
+    private Long userId;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Tag tag = (Tag) o;
-        return Objects.equals(tagId, tag.tagId);
+        OAuth oauth = (OAuth) o;
+        return Objects.equals(oauthId, oauth.oauthId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tagId);
+        return Objects.hash(oauthId);
     }
 }

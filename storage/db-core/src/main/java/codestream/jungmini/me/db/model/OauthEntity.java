@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-import codestream.jungmini.me.model.OAuthProvider;
+import codestream.jungmini.me.domain.OAuthProvider;
 
 @ToString
 @Getter

@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-import codestream.jungmini.me.model.UserRole;
+import codestream.jungmini.me.domain.UserRole;
 
 @ToString
 @Getter

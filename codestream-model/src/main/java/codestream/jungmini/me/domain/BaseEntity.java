@@ -1,4 +1,4 @@
-package codestream.jungmini.me.model;
+package codestream.jungmini.me.domain;
 
 import java.time.LocalDateTime;
 

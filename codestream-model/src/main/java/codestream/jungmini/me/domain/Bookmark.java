@@ -1,4 +1,4 @@
-package codestream.jungmini.me.model;
+package codestream.jungmini.me.domain;
 
 import java.util.Objects;
 
@@ -11,25 +11,20 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User extends BaseEntity {
+public class Bookmark extends BaseEntity {
     private Long userId;
-    private String email;
-    private String password;
-    private String nickname;
-    private String introduction;
-    private String profileImageUrl;
-    private UserRole role;
+    private Long articleId;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(userId, user.userId);
+        Bookmark bookmark = (Bookmark) o;
+        return Objects.equals(userId, bookmark.userId) && Objects.equals(articleId, bookmark.articleId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId);
+        return Objects.hash(userId, articleId);
     }
 }
